@@ -1,34 +1,81 @@
-Heroku buildpack: Hello
-=======================
+# Heroku buildpack: Python+Blender
 
-This is an example [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks).
+Lets heroku applications use bpy (Blender scripting via Python).
 
-Usage
------
+### Depending buildpacks
 
-Example usage:
+  https://github.com/heroku/heroku-buildpack-python
+  https://github.com/ddollar/heroku-buildpack-apt.git
 
-    $ ls
-    hello.txt
+### Aptfile
+```
+curl
+build-essential
+git
+cmake
+libboost1.55-dev
+libboost-filesystem1.55
+libboost-filesystem1.55-dev
+libboost-locale1.55
+libboost-locale1.55-dev
+libboost-regex1.55
+libboost-regex1.55-dev
+libboost-system1.55
+libboost-system1.55-dev
+libboost-thread1.55
+libboost-thread1.55-dev
+libboost-wave1.55
+libboost-wave1.55-dev
+libx11
+libx11-dev
+libxi
+libxi-dev
+libsndfile1
+libsndfile1-dev
+libpng12
+libpng12-dev
+libjpeg
+libjpeg-dev
+libfftw3
+libfftw3-dev
+libopenjpeg
+libopenjpeg-dev
+libopenal
+libopenal-dev
+libalut
+libalut-dev
+libvorbis
+libvorbis-dev
+libglu1-mesa
+libglu1-mesa-dev
+libgl1-mesa-glx
+libsdl1.2debian
+libsdl1.2-dev
+libfreetype6
+libfreetype6-dev
+libtiff5
+libtiff5-dev
+libavdevice
+libavdevice-dev
+libavformat
+libavformat-dev
+libavutil
+libavutil-dev
+libavcodec
+libavcodec-dev
+libjack
+libjack-dev
+libswscale
+libswscale-dev
+libx264
+libx264-dev
+libmp3lame
+libmp3lame-dev
+libspnav
+libspnav-dev
+libtheora
+libtheora-dev
+libglew
+libglew-dev
+```
 
-    $ heroku create --stack cedar --buildpack http://github.com/heroku/heroku-buildpack-hello.git
-
-    $ git push heroku master
-    ...
-    -----> Heroku receiving push
-    -----> Fetching custom buildpack
-    -----> HelloFramework app detected
-    -----> Found a hello.txt
-
-The buildpack will detect that your app has a `hello.txt` in the root. If this file has contents, it will be copied to `goodbye.txt` with instances of the world `hello` changed to `goodbye`.
-
-Hacking
--------
-
-To use this buildpack, fork it on Github.  Push up changes to your fork, then create a test app with `--buildpack <your-github-url>` and push to it.
-
-For example, you can change the displayed name of the buildpack to `GoodbyeFramework`. Open `bin/detect` in your editor, and change `HelloFramework` to `GoodbyeFramework`.
-
-Commit and push the changes to your buildpack to your Github fork, then push your sample app to Heroku to test.  You should see:
-
-    -----> GoodbyeFramework app detected
