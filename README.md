@@ -1,11 +1,12 @@
 # Heroku buildpack: Python+Blender
 
-Lets heroku applications use bpy (Blender scripting via Python).
+bpy module for heroku
 
 ### Depending buildpacks
-
-  https://github.com/heroku/heroku-buildpack-python
-  https://github.com/ddollar/heroku-buildpack-apt.git
+```
+https://github.com/heroku/heroku-buildpack-python
+https://github.com/ddollar/heroku-buildpack-apt.git
+```
 
 ### Aptfile
 ```
