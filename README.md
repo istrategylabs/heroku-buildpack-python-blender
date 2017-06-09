@@ -5,7 +5,7 @@ bpy module for heroku
 ### Depending buildpacks
 ```
 https://github.com/heroku/heroku-buildpack-python
-https://github.com/ddollar/heroku-buildpack-apt.git
+https://github.com/heroku/heroku-buildpack-apt
 ```
 
 ### Aptfile

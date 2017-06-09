@@ -4,7 +4,7 @@
 PYTHON_VERSION=$(python3 -c "import sys; print('.'.join(map(str, sys.version_info[:2])))")
 PYTHON_ROOT_DIR=$1/.heroku/python
 PYTHON_SITE_PACKAGES_DIR=${PYTHON_ROOT_DIR}/lib/python${PYTHON_VERSION}/site-packages
-BLENDER_VERSION=2.76b
+BLENDER_VERSION=2.78c
 
 # source directory
 ILMBASE_SOURCE_DIR=$(pwd)/openexr/IlmBase
